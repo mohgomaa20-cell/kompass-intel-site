@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
 
         {/* Brand Header */}
         <div className="flex flex-col items-center text-center space-y-4 mb-8">
-          <Logo className="h-12 w-12" />
+          <Logo width={48} height={48} className="object-contain" priority={true} />
           <div>
             <h1 className="font-condensed text-xl font-extrabold tracking-[0.2em] text-[#E6E6E6]">
               KOMPASS INTEL

@@ -252,7 +252,7 @@ export default function AdminDashboardPage() {
       <header className="border-b border-kompass-border bg-[#111722]/90 h-16 w-full flex items-center shadow-lg">
         <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <Logo className="h-7 w-7 animate-pulse" />
+            <Logo width={28} height={28} className="object-contain animate-pulse" />
             <h1 className="font-condensed text-lg font-bold tracking-widest text-[#E6E6E6]">
               KOMPASS COMMAND CENTER
             </h1>

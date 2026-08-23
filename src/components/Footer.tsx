@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import Image from "next/image";
+import Logo from "@/components/ui/Logo";
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Kompass Logo" width={24} height={24} className="object-contain" />
+              <Logo width={24} height={24} className="object-contain" />
               <span className="font-condensed text-base font-bold tracking-[0.2em] text-kompass-text">
                 KOMPASS
               </span>

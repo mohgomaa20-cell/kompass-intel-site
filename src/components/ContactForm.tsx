@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { wkfCategories } from "@/data/content";
+import { saveLead } from "@/lib/db";
 
 export const ContactForm: React.FC = () => {
   const { t, locale } = useLanguage();
@@ -51,7 +52,7 @@ export const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.contact || !formData.role || !formData.division || (!formData.weight && !showOtherDetails)) {
       setStatusMsg({ type: "error", text: t.msg_error });
@@ -59,9 +60,15 @@ export const ContactForm: React.FC = () => {
     }
 
     setLoading(true);
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      await saveLead({
+        name: formData.name,
+        contact: formData.contact,
+        role: formData.role,
+        division: formData.division,
+        weight: showOtherDetails ? formData.otherDetails : formData.weight,
+        notes: formData.notes
+      });
       setStatusMsg({ type: "success", text: t.msg_success });
       // Reset form
       setFormData({
@@ -73,7 +80,12 @@ export const ContactForm: React.FC = () => {
         otherDetails: "",
         notes: ""
       });
-    }, 1000);
+    } catch (err) {
+      console.error(err);
+      setStatusMsg({ type: "error", text: "Error submitting request." });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

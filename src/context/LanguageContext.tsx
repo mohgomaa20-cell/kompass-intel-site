@@ -1,7 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useMemo } from "react";
 import { content, ContentTranslation } from "@/data/content";
+import { getSiteContentOverrides } from "@/lib/db";
 
 type Locale = "en" | "ar";
 
@@ -10,12 +11,23 @@ interface LanguageContextType {
   setLocale: (locale: Locale) => void;
   t: ContentTranslation;
   isRtl: boolean;
+  refreshOverrides: () => Promise<void>;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [locale, setLocale] = useState<Locale>("en");
+  const [overrides, setOverrides] = useState<Record<string, string>>({});
+
+  const refreshOverrides = async () => {
+    try {
+      const data = await getSiteContentOverrides();
+      setOverrides(data);
+    } catch (err) {
+      console.error("Failed to load content overrides:", err);
+    }
+  };
 
   useEffect(() => {
     // Set HTML dir and lang attributes
@@ -24,11 +36,39 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = locale;
   }, [locale]);
 
-  const t = content[locale];
+  useEffect(() => {
+    refreshOverrides();
+  }, []);
+
+  const baseT = content[locale];
   const isRtl = locale === "ar";
 
+  // Merge overrides dynamically
+  const t = useMemo(() => {
+    const newT = { ...baseT };
+    if (overrides.hero_title) newT.hero_title = overrides.hero_title;
+    if (overrides.hero_desc) newT.hero_desc = overrides.hero_desc;
+    
+    // Ecosystem overrides
+    newT.products = baseT.products.map(prod => {
+      const updated = { ...prod };
+      if (prod.id === "kompass" && overrides.product_kompass_desc) {
+        updated.desc = overrides.product_kompass_desc;
+      }
+      if (prod.id === "kontrol" && overrides.product_kontrol_desc) {
+        updated.desc = overrides.product_kontrol_desc;
+      }
+      if (prod.id === "edge" && overrides.product_edge_desc) {
+        updated.desc = overrides.product_edge_desc;
+      }
+      return updated;
+    });
+
+    return newT;
+  }, [baseT, overrides]);
+
   return (
-    <LanguageContext.Provider value={{ locale, setLocale, t, isRtl }}>
+    <LanguageContext.Provider value={{ locale, setLocale, t, isRtl, refreshOverrides }}>
       {children}
     </LanguageContext.Provider>
   );

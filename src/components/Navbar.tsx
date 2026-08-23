@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from "@/components/ui/Logo";
+import Image from "next/image";
 
 export const Navbar: React.FC = () => {
   const { locale, setLocale, t } = useLanguage();
@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
               whileHover={{ rotate: 10 }}
               transition={{ duration: 0.2, ease: "linear" as const }}
             >
-              <Logo className="h-full w-full" />
+              <Image src="/logo.png" alt="Kompass Logo" width={36} height={36} className="object-contain" />
             </motion.div>
             <span className="font-condensed text-xl font-bold tracking-[0.2em] text-kompass-text group-hover:text-kompass-teal transition-colors">
               KOMPASS

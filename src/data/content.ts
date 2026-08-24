@@ -17,6 +17,7 @@ export interface ContentTranslation {
   hero_desc: string;
   btn_cta_hero: string;
   btn_cta_sec: string;
+  hero_credentials: string;
 
   // Process Flow Strip
   process_title: string;
@@ -102,6 +103,7 @@ export interface ContentTranslation {
     role: string;
     tag: string;
   }[];
+  testimonials_fallback: string;
 
   // Insights / News Grid
   insights_subtitle: string;
@@ -121,6 +123,7 @@ export interface ContentTranslation {
   // Contact / Lead Form
   contact_subtitle: string;
   contact_title: string;
+  contact_disclaimer: string;
   c_lbl_phone: string;
   c_val_phone: string;
   c_lbl_email: string;
@@ -168,6 +171,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     hero_desc: "FROM DATA TO DIRECTION. Frame-level, video-verified opponent intelligence dossiers for national federations, elite coaches, and athletes competing at the WKF Premier League level.",
     btn_cta_hero: "Request a Sample Report",
     btn_cta_sec: "See the Method",
+    hero_credentials: "Founded by WKF World Champions. Validated by WKF World Champions. Built from inside elite competition.",
 
     process_title: "PROCESS FLOW",
     p_step1: "ANALYZE",
@@ -209,7 +213,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     solutions_subtitle: "CONNECTED SOLUTIONS",
     solutions_title: "One method. Every level of competition.",
-    solutions_desc: "We process raw combat telemetry through a hybrid expert-in-the-loop workflow. Gemini powers the first-pass computer-vision telemetry extraction, which is audited at the frame-level by international champions, and compiled into Claude-drafted reports. No automated guesswork: only verified tactical instructions designed to be memorized in the prep room and applied in the corner.",
+    solutions_desc: "We process frame-verified match data through a hybrid expert-in-the-loop workflow. Our proprietary intelligence pipeline combines advanced video analysis technology with frame-level expert validation by international champions. No automated guesswork — only verified tactical instructions designed to be memorized in the prep room and applied in the corner.",
     solutions_learn_more: "Explore Method & System",
 
     demo_subtitle: "LIVE DEMO",
@@ -277,20 +281,8 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     testimonials_subtitle: "VALIDATORS",
     testimonials_title: "In-Corner Verification",
-    testimonials: [
-      {
-        quote: "Kompass reports completely changed how we structured our sparring sessions for the European Championships. We drilled the exact exit vector of our final opponent, and hit it clean in the second round.",
-        author: "WKF National Team Coach",
-        role: "Western European Federation",
-        tag: "IN-CORNER AUDITED"
-      },
-      {
-        quote: "Knowing the sub-second gaze and shoulder drop tells of my rivals allowed me to trigger preemptive counters. It's not sports analytics; it's a cheat sheet for the mat.",
-        author: "Premier League Competitor",
-        role: "Male Kumite -75kg Category",
-        tag: "ATHLETE CONFIRMED"
-      }
-    ],
+    testimonials: [],
+    testimonials_fallback: "KOMPASS is currently partnering with national federations preparing for the 2026 WKF competition cycle. Client references available upon request.",
 
     insights_subtitle: "INTELLIGENCE GRID",
     insights_title: "Tactical Briefings & Insights",
@@ -307,10 +299,11 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     contact_subtitle: "SECURE ACCESS",
     contact_title: "Initiate Tactical Consultation",
+    contact_disclaimer: "All consultation requests are handled confidentially. Intelligence deliverables are prepared exclusively for the requesting federation or coaching staff and are not shared with third parties.",
     c_lbl_phone: "Analyst Secure Line",
     c_val_phone: "+20 120 123 4567",
     c_lbl_email: "Secure Inquiries",
-    c_val_email: "intel@kompass.analysis",
+    c_val_email: "intel@kompass-analysis.com",
     c_lbl_loc: "Operations",
     c_val_loc: "Cairo, Egypt / Dubai, UAE",
     f_lbl_name: "Full Name",
@@ -327,7 +320,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     msg_success: "Tactical request submitted successfully. A lead analyst will contact you within 12 hours.",
     msg_error: "Please complete all required fields correctly.",
 
-    foot_desc: "KOMPASS is a karate performance intelligence brand turning raw competitive telemetry into clear tactical direction.",
+    foot_desc: "KOMPASS is a karate performance intelligence brand turning raw competitive match data into clear tactical direction.\n\nFounded by Malek Salama — WKF World Champion and architectural engineer — alongside a world champion technical validator. Every report carries expert sign-off before delivery.",
     foot_rights: "All Rights Reserved.",
     foot_col_reports: "ECOSYSTEM",
     foot_col_solutions: "SOLUTIONS",
@@ -351,6 +344,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     hero_desc: "من البيانات إلى الاتجاه. ملفات استخباراتية تفصيلية وموثقة بالفيديو لخصومك على مستوى الإطار، مخصصة للاتحادات الوطنية، والمدربين النخبة، والرياضيين المنافسين في الدوري الممتاز WKF.",
     btn_cta_hero: "اطلب عينة تقرير مجانية",
     btn_cta_sec: "استكشف المنهجية",
+    hero_credentials: "تأسست على يد أبطال العالم لـ WKF. تم التحقق منها بواسطة أبطال العالم لـ WKF. بنيت من داخل المنافسة النخبوية.",
 
     process_title: "خطوات العملية التكتيكية",
     p_step1: "حلل",
@@ -392,7 +386,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     solutions_subtitle: "الحلول المتكاملة",
     solutions_title: "منهجية موحدة. لكل مستويات التنافس.",
-    solutions_desc: "نعالج البيانات القتالية الخام عبر مسار عمل هجين: يستخرج الذكاء الاصطناعي (Gemini) البيانات الأولية بالفيديو، ثم يقوم بطل عالمي بتدقيقها إطاراً بإطار للتأكد من موثوقيتها، ومن ثم يتم صياغة التقرير النهائي (Claude). لا تخمين تلقائي: نوفر توجيهات تكتيكية دقيقة وموثقة يتم دراستها في غرفة الإعداد وتطبيقها في الكورنر.",
+    solutions_desc: "نعالج بيانات المباريات المعتمدة إطاراً بإطار عبر مسار عمل هجين. يجمع مسار عملنا الاستقصائي المبتكر بين تقنيات تحليل الفيديو المتقدمة والتدقيق البشري عالي الدقة إطاراً بإطار بواسطة أبطال دوليين. لا تخمين تلقائي — نوفر توجيهات تكتيكية دقيقة وموثقة يتم دراستها في غرفة الإعداد وتطبيقها في الكورنر.",
     solutions_learn_more: "استكشف المنهجية والنظام",
 
     demo_subtitle: "عرض تجريبي",
@@ -460,20 +454,8 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     testimonials_subtitle: "شهادات المدربين واللاعبين",
     testimonials_title: "التحقق الميداني في الكورنر",
-    testimonials: [
-      {
-        quote: "غيرت تقارير كومباس طريقة تنظيمنا لحصص التدريب للبطولة الأوروبية بالكامل. تدربنا على خط الحركة الجانبية لخصمنا الأخير بدقة، ونفذنا الضربة التكتيكية في الجولة الثانية بنجاح.",
-        author: "مدرب منتخب وطني",
-        role: "اتحاد كاراتيه أوروبي نخبوّي",
-        tag: "تدقيق معتمد في الكورنر"
-      },
-      {
-        quote: "معرفة حركة عيني خصومي وانخفاض الكتف لديهم قبل أجزاء من الثانية سمحت لي بشن ضربات مضادة استباقية حاسمة. إنها ليست مجرد تحليلات؛ إنها ورقة سرية على البساط.",
-        author: "لاعب منافس في الدوري الممتاز",
-        role: "فئة كوميتيه رجال تحت 75 كجم",
-        tag: "معتمد من اللاعبين"
-      }
-    ],
+    testimonials: [],
+    testimonials_fallback: "تتعاون كومباس حالياً مع اتحادات وطنية تستعد لدورة بطولات WKF لعام 2026. مراجع العملاء متاحة عند الطلب.",
 
     insights_subtitle: "شبكة الاستخبارات",
     insights_title: "إيجازات تكتيكية ومقالات تحليلية",
@@ -490,10 +472,11 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     contact_subtitle: "طلب الوصول الآمن",
     contact_title: "ابدأ استشارتك التكتيكية",
+    contact_disclaimer: "يتم التعامل مع جميع طلبات الاستشارة بسرية تامة. يتم إعداد التقارير التكتيكية خصيصاً للاتحاد الرياضي أو الطاقم التدريبي مقدم الطلب، ولا يتم مشاركتها مع أي أطراف ثالثة.",
     c_lbl_phone: "خط المحلل الآمن",
     c_val_phone: "+20 120 123 4567",
     c_lbl_email: "الاستفسارات الآمنة",
-    c_val_email: "intel@kompass.analysis",
+    c_val_email: "intel@kompass-analysis.com",
     c_lbl_loc: "العمليات تكتيكية",
     c_val_loc: "القاهرة، مصر / دبي، الإمارات",
     f_lbl_name: "الاسم الكامل",
@@ -510,7 +493,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     msg_success: "تم إرسال طلبك التكتيكي بنجاح. سيتصل بك كبير محللينا خلال 12 ساعة.",
     msg_error: "يرجى ملء جميع الحقول المطلوبة بشكل صحيح.",
 
-    foot_desc: "كومباس هي علامة ذكاء أداء الكاراتيه الرائدة التي تحول بيانات التحليلات القتالية الخام إلى اتجاه وتوجيه تكتيكي دقيق.",
+    foot_desc: "كومباس هي علامة ذكاء أداء الكاراتيه الرائدة التي تحول بيانات المباريات المعتمدة إطاراً بإطار إلى اتجاه وتوجيه تكتيكي دقيق.\n\nتأسست على يد مالك سلامة — بطل العالم لـ WKF ومهندس معماري — إلى جانب مدقق فني بطل عالمي. كل تقرير يحمل موافقة الخبير قبل التسليم.",
     foot_rights: "جميع الحقوق محفوظة.",
     foot_col_reports: "المنظومة المتكاملة",
     foot_col_solutions: "الحلول",

@@ -105,20 +105,6 @@ export const ContactForm: React.FC = () => {
             </div>
 
             <div className="space-y-6">
-              {/* Phone secure channel */}
-              <div className="flex gap-4 border border-kompass-border bg-kompass-card p-4">
-                <div className="h-10 w-10 border border-kompass-border bg-[#0B0F16] flex items-center justify-center text-kompass-teal">
-                  ☎
-                </div>
-                <div>
-                  <h4 className="font-condensed text-xs font-bold uppercase text-kompass-text/60">
-                    {t.c_lbl_phone}
-                  </h4>
-                  <p className="font-mono text-sm font-bold text-kompass-text mt-1">
-                    {t.c_val_phone}
-                  </p>
-                </div>
-              </div>
 
               {/* Email secure channel */}
               <div className="flex gap-4 border border-kompass-border bg-kompass-card p-4">
@@ -152,8 +138,8 @@ export const ContactForm: React.FC = () => {
             </div>
 
             {/* Redacted watermark text */}
-            <div className="border border-dashed border-kompass-border/40 p-4 font-mono text-[9px] text-kompass-text/35 uppercase leading-relaxed">
-              WARNING: STANCE TELEMETRY REQUEST DATA IS LOGGED SECURELY IN OUR ENCRYPTED HOSTING PIPELINE. INTEL BRIEFINGS WILL BE ISSUED ONCE ATHLETE CREDENTIALS ARE COMPLETED.
+            <div className="border border-dashed border-kompass-border/40 p-4 font-sans text-[10px] text-kompass-text/75 leading-relaxed text-left">
+              {t.contact_disclaimer}
             </div>
           </div>
 

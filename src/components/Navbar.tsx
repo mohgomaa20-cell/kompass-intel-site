@@ -7,14 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/ui/Logo";
 
 export const Navbar: React.FC = () => {
-  const { locale, setLocale, t } = useLanguage();
+  const { t } = useLanguage();
   const [activeMenu, setActiveMenu] = useState<"solutions" | "reports" | "method" | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
-
-  const toggleLanguage = () => {
-    setLocale(locale === "en" ? "ar" : "en");
-  };
 
   const handleMobileAccordion = (section: string) => {
     setMobileAccordion(mobileAccordion === section ? null : section);
@@ -91,12 +87,11 @@ export const Navbar: React.FC = () => {
         {/* Right: Lang switcher + Access CTA */}
         <div className="flex items-center gap-4">
           {/* Language Switcher */}
-          <button 
-            onClick={toggleLanguage}
-            className="border border-kompass-border px-3 py-1 font-condensed text-xs uppercase tracking-wider text-kompass-text hover:border-kompass-teal hover:text-kompass-teal transition-all bg-kompass-card/30"
+          <span 
+            className="border border-kompass-border px-3 py-1 font-condensed text-xs uppercase tracking-wider text-kompass-text bg-kompass-card/30 select-none cursor-default"
           >
-            {locale === "en" ? "العربية" : "EN"}
-          </button>
+            العربية — Coming Soon
+          </span>
 
           {/* CTAs */}
           <Link href="#contact" className="hidden sm:inline-block font-condensed text-xs uppercase tracking-widest text-kompass-text/70 hover:text-kompass-text transition-colors">

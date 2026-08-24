@@ -35,13 +35,13 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1.5 text-[11px] text-kompass-text/60 font-mono">
               <li>
-                <Link href="#contact" className="hover:text-kompass-text transition-colors">KOMPASS</Link>
+                <Link href="#contact" className="hover:text-kompass-text transition-colors">KOMPASS (Contact Us)</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-kompass-text transition-colors">KONTROL</Link>
+                <Link href="#contact" className="hover:text-kompass-text transition-colors">KONTROL (Contact Us)</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-kompass-text transition-colors">EDGE</Link>
+                <Link href="#contact" className="hover:text-kompass-text transition-colors">EDGE (Contact Us)</Link>
               </li>
             </ul>
           </div>
@@ -53,13 +53,13 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1.5 text-[11px] text-kompass-text/60">
               <li>
-                <Link href="#contact" className="hover:text-kompass-text transition-colors">For Federations</Link>
+                <Link href="#contact" className="hover:text-kompass-text transition-colors">For Federations (Contact Us)</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-kompass-text transition-colors">For Coaches</Link>
+                <Link href="#contact" className="hover:text-kompass-text transition-colors">For Coaches (Contact Us)</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-kompass-text transition-colors">For Athletes</Link>
+                <Link href="#contact" className="hover:text-kompass-text transition-colors">For Athletes (Contact Us)</Link>
               </li>
             </ul>
           </div>
@@ -95,23 +95,12 @@ export const Footer: React.FC = () => {
           
           {/* Social Icons */}
           <div className="flex gap-4">
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="hover:text-kompass-teal transition-colors font-mono text-[9px] uppercase tracking-wider">
-              [ X ]
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-kompass-teal transition-colors font-mono text-[9px] uppercase tracking-wider">
+            <a href="https://instagram.com/kompass.intelligence" target="_blank" rel="noopener noreferrer" className="hover:text-kompass-teal transition-colors font-mono text-[9px] uppercase tracking-wider">
               [ INSTAGRAM ]
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-kompass-teal transition-colors font-mono text-[9px] uppercase tracking-wider">
+            <a href="https://linkedin.com/company/kompass-analysis" target="_blank" rel="noopener noreferrer" className="hover:text-kompass-teal transition-colors font-mono text-[9px] uppercase tracking-wider">
               [ LINKEDIN ]
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-kompass-teal transition-colors font-mono text-[9px] uppercase tracking-wider">
-              [ YOUTUBE ]
-            </a>
-          </div>
-
-          <div className="flex gap-4 text-right">
-            <Link href="#contact" className="hover:text-kompass-text transition-colors">Privacy Policy</Link>
-            <Link href="#contact" className="hover:text-kompass-text transition-colors">Terms of Service</Link>
           </div>
         </div>
 

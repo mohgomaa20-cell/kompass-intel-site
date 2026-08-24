@@ -14,7 +14,10 @@ export const ConnectedSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Interactive Product Report Preview Dashboard */}
-          <div className="lg:col-span-6 w-full">
+          <div className="lg:col-span-6 w-full space-y-2">
+            <div className="font-mono text-[9px] sm:text-[10px] text-kompass-teal uppercase tracking-wider text-left">
+              SAMPLE PROFILE — ILLUSTRATIVE DATA ONLY · NOT A REAL COMPETITOR
+            </div>
             <div className="border border-kompass-border bg-kompass-card rounded-none overflow-hidden shadow-2xl flex flex-col shadow-kompass-teal/5">
               
               {/* Dashboard Top Header */}

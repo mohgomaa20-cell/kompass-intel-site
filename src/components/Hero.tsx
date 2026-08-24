@@ -39,6 +39,10 @@ export const Hero: React.FC = () => {
               {t.hero_desc}
             </p>
 
+            <p className="text-base sm:text-lg text-kompass-text/75 leading-relaxed max-w-xl">
+              {t.hero_credentials}
+            </p>
+
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <Link 

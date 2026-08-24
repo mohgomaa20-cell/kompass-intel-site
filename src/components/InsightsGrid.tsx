@@ -20,30 +20,28 @@ export const InsightsGrid: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4-Card Grid */}
+        {/* 4-Card Grid (Content Preview Library, Non-Clickable) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.insights.map((item, i) => (
             <div 
               key={i} 
-              className="flex flex-col justify-between bg-kompass-card border border-kompass-border border-t-2 border-t-kompass-teal p-6 hover:border-kompass-teal/60 transition-all cursor-pointer group"
+              className="flex flex-col justify-between bg-kompass-card border border-kompass-border border-t-2 border-t-kompass-teal p-6 transition-all"
             >
               <div>
-                {/* Date & Tag */}
+                {/* Tag Only (Date Removed) */}
                 <div className="flex justify-between items-center text-[9px] font-mono text-kompass-text/45 uppercase tracking-wider mb-4">
-                  <span>{item.date}</span>
                   <span className="text-kompass-teal">{item.category}</span>
                 </div>
                 
-                {/* Title */}
-                <h3 className="font-condensed text-base font-bold text-kompass-text tracking-wide group-hover:text-kompass-teal transition-colors leading-snug text-left uppercase">
+                {/* Title (Non-Clickable) */}
+                <h3 className="font-condensed text-base font-bold text-kompass-text tracking-wide leading-snug text-left uppercase">
                   {item.title}
                 </h3>
               </div>
 
-              {/* Read Time Info */}
+              {/* Read Time Info (Arrow/Link Removed) */}
               <div className="mt-8 flex justify-between items-center text-[10px] font-mono border-t border-kompass-border/30 pt-4 text-kompass-text/40">
                 <span>READING TIME: {item.read_time}</span>
-                <span className="text-kompass-teal group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
           ))}

@@ -9,7 +9,7 @@ export const Logo: React.FC<{ className?: string; priority?: boolean; width?: nu
 }) => {
   return (
     <Image 
-      src="/logo.png" 
+      src="https://ckrdgxlakkyrzajkmmwy.supabase.co/storage/v1/object/public/Kompass/logo,png.png" 
       alt="Kompass Intelligence Logo" 
       width={width} 
       height={height} 

@@ -64,14 +64,14 @@ export const Hero: React.FC = () => {
 
           {/* Hero Right Visual: Silhouette overlaid with vector telemetry lines */}
           <div className="lg:col-span-5 flex justify-center items-center w-full">
-            <div className="relative w-full max-w-[420px] aspect-[4/3] rounded-xl border border-cyan-500/20 shadow-2xl overflow-hidden bg-kompass-card/30">
+            <div className="w-full max-w-[550px] border border-cyan-500/20 shadow-2xl rounded-xl bg-kompass-card/30 overflow-hidden">
               <Image 
-                src="https://ckrdgxlakkyrzajkmmwy.supabase.co/storage/v1/object/public/Kompass/logo,png.png"
-                alt="Kompass Tactical Comparison Visual"
-                fill
-                priority={true}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain p-4"
+                src="https://ckrdgxlakkyrzajkmmwy.supabase.co/storage/v1/object/public/Kompass/Kompass%20website.jpeg"
+                alt="WKF Tactical Telemetry Analysis"
+                width={700}
+                height={450}
+                priority
+                className="w-full h-auto object-cover rounded-xl"
               />
             </div>
           </div>

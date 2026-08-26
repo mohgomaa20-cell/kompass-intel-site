@@ -95,9 +95,7 @@ export const ConnectedSection: React.FC = () => {
                           <span className="text-xl font-condensed font-extrabold text-kompass-teal block">{t.m_val2}</span>
                           <span className="text-[8px] uppercase tracking-wider text-kompass-text/45 font-mono block">{t.m_lbl2}</span>
                         </div>
-                        <p className="text-[11px] text-kompass-text/70 leading-relaxed pl-1 text-left">
-                          {t.insight_p}
-                        </p>
+                        {/* Narrative counter paragraph removed as requested */}
                       </div>
                     </div>
                   </div>

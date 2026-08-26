@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap gap-2 sm:gap-3">
               <Link 
                 href="#contact" 
-                className="bg-kompass-card hover:bg-kompass-cardLight border border-kompass-border hover:border-kompass-teal/60 text-kompass-text px-4 py-2 font-condensed text-xs uppercase tracking-wider transition-all"
+                className="bg-kompass-teal hover:bg-transparent border border-kompass-teal text-kompass-bg hover:text-kompass-teal px-5 py-2.5 font-condensed text-xs uppercase tracking-wider font-extrabold transition-all shadow-md shadow-kompass-teal/10"
               >
                 For Federations
               </Link>

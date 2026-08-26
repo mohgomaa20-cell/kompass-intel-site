@@ -58,7 +58,7 @@ const INITIAL_PROFILES: CompetitorProfile[] = [
     weight: "Male Kumite -75kg",
     style: "Counter-Striker / Ma-ai Controller",
     strengths: "Chudan Gyaku-Zuki counters (92% accuracy), lateral right escape route.",
-    vulnerabilities: "Unconscious lead shoulder drop (220ms window) before Kizami-Zuki; rear heel lift (310ms window) before Gyaku-Zuki.",
+    vulnerabilities: "Unconscious lead shoulder drop before Kizami-Zuki; rear heel lift before Gyaku-Zuki.",
     tendencies: "Draws opponents into mid-zone, commits to warning sequences in the final 30 seconds if score is level."
   },
   {

@@ -19,12 +19,15 @@ export interface ContentTranslation {
   btn_cta_sec: string;
   hero_credentials: string;
 
-  // Process Flow Strip
   process_title: string;
   p_step1: string;
   p_step2: string;
   p_step3: string;
   p_step4: string;
+  p_desc1: string;
+  p_desc2: string;
+  p_desc3: string;
+  p_desc4: string;
 
   // Product Showcase (Ecosystem)
   products_subtitle: string;
@@ -168,7 +171,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     hero_tagline: "FIRST-MOVE INTELLIGENCE · WKF COMPETITOR ANALYSIS",
     hero_title: "WIN BEFORE IT HAPPENS.",
-    hero_desc: "FROM DATA TO DIRECTION. Frame-level, video-verified opponent intelligence dossiers for national federations, elite coaches, and athletes competing at the WKF Premier League level.",
+    hero_desc: "FROM DATA TO DIRECTION. Video-verified opponent intelligence dossiers for national federations preparing for elite WKF competition.",
     btn_cta_hero: "Request a Sample Report",
     btn_cta_sec: "See the Method",
     hero_credentials: "Founded by WKF World Champions. Validated by WKF World Champions. Built from inside elite competition.",
@@ -178,6 +181,10 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     p_step2: "DECIDE",
     p_step3: "ACT",
     p_step4: "WIN",
+    p_desc1: "Extract high-frequency combative signals and raw match footage.",
+    p_desc2: "Filter target profiles through professional tactical scenario matrices.",
+    p_desc3: "Synthesize competitor tells into distilled, action-ready briefings.",
+    p_desc4: "Apply counter-strategies and secure combat advantage in the ring.",
 
     products_subtitle: "ECOSYSTEM MAPPING",
     products_title: "Ecosystem Tiers",
@@ -186,7 +193,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
         id: "kompass",
         badge: "01 / NAVIGATES YOU",
         title: "KOMPASS",
-        desc: "Competitor video dossiers & high-precision opponent mapping. Get frame-level tactical footprints of international rivals.",
+        desc: "Competitor video dossiers & high-precision opponent mapping. Surfaces tactical footprints of international rivals.",
         link_text: "Learn More",
         metric_label: "Average Lead Time Surfaced",
         metric_value: "133ms"
@@ -197,8 +204,8 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
         title: "KONTROL",
         desc: "The complete strategic preparation platform. Translate reports into custom counter drills, sparring blueprints, and routines.",
         link_text: "Learn More",
-        metric_label: "Verification Level",
-        metric_value: "Frame-by-Frame"
+        metric_label: "Analytical Verification",
+        metric_value: "Expert Audited"
       },
       {
         id: "edge",
@@ -213,7 +220,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     solutions_subtitle: "CONNECTED SOLUTIONS",
     solutions_title: "One method. Every level of competition.",
-    solutions_desc: "We process frame-verified match data through a hybrid expert-in-the-loop workflow. Our proprietary intelligence pipeline combines advanced video analysis technology with frame-level expert validation by international champions. No automated guesswork — only verified tactical instructions designed to be memorized in the prep room and applied in the corner.",
+    solutions_desc: "Every briefing is validated frame-by-frame by WKF World Champions before delivery to secure combat precision.",
     solutions_learn_more: "Explore Method & System",
 
     demo_subtitle: "LIVE DEMO",
@@ -253,21 +260,21 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
       {
         tell: "Subtle drop of lead shoulder",
         trigger: "Kizami-Zuki (Lead jab)",
-        timing: "0.22s before release",
+        timing: "Sub-second trigger",
         reliability: "High (88%)",
         rating: "high"
       },
       {
         tell: "Rear heel lift & hip rotation lock",
         trigger: "Gyaku-Zuki (Rear punch)",
-        timing: "0.31s before release",
+        timing: "Sub-second trigger",
         reliability: "High (94%)",
         rating: "high"
       },
       {
         tell: "Small step outward with lead foot",
         trigger: "Mawashi-Geri (Roundhouse kick)",
-        timing: "0.45s before sweep/kick",
+        timing: "Sub-second trigger",
         reliability: "Medium (72%)",
         rating: "medium"
       }
@@ -279,10 +286,10 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
       { value: "4-match", label: "Minimum cross-analysis before a finding is confirmed", tag: "CONFIRMED — MULTI-MATCH" }
     ],
 
-    testimonials_subtitle: "VALIDATORS",
-    testimonials_title: "In-Corner Verification",
+    testimonials_subtitle: "FEDERATION INTEGRATION",
+    testimonials_title: "National Preparation Cycles & Tracking",
     testimonials: [],
-    testimonials_fallback: "KOMPASS is currently partnering with national federations preparing for the 2026 WKF competition cycle. Client references available upon request.",
+    testimonials_fallback: "KOMPASS is currently partnering with national federations preparing for the 2026 WKF competition cycle. Multi-athlete tracking and client references available upon secure request.",
 
     insights_subtitle: "INTELLIGENCE GRID",
     insights_title: "Tactical Briefings & Insights",
@@ -341,7 +348,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     hero_tagline: "استخبارات الخطوة الأولى · تحليل منافسي WKF",
     hero_title: "الفوز قبل أن يحدث.",
-    hero_desc: "من البيانات إلى الاتجاه. ملفات استخباراتية تفصيلية وموثقة بالفيديو لخصومك على مستوى الإطار، مخصصة للاتحادات الوطنية، والمدربين النخبة، والرياضيين المنافسين في الدوري الممتاز WKF.",
+    hero_desc: "من البيانات إلى الاتجاه. ملفات استخباراتية تفصيلية وموثقة بالفيديو للخصوم، مخصصة للاتحادات الوطنية المستعدة للتنافس النخبوي في بطولات WKF.",
     btn_cta_hero: "اطلب عينة تقرير مجانية",
     btn_cta_sec: "استكشف المنهجية",
     hero_credentials: "تأسست على يد أبطال العالم لـ WKF. تم التحقق منها بواسطة أبطال العالم لـ WKF. بنيت من داخل المنافسة النخبوية.",
@@ -351,6 +358,10 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     p_step2: "قرر",
     p_step3: "نفذ",
     p_step4: "افوز",
+    p_desc1: "استخراج الإشارات القتالية عالية التردد ولقطات المباريات الأولية.",
+    p_desc2: "تصفية ملفات المنافسين من خلال مصفوفات السيناريوهات التكتيكية الاحترافية.",
+    p_desc3: "تلخيص قرائن الخصم في إيجازات تكتيكية جاهزة للتنفيذ الفوري.",
+    p_desc4: "تطبيق الاستراتيجيات المضادة وتأمين التفوق القتالي على البساط.",
 
     products_subtitle: "منظومة الأداء المتكاملة",
     products_title: "أقسام المنظومة",
@@ -359,7 +370,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
         id: "kompass",
         badge: "٠١ / يوجهك تكتيكياً",
         title: "KOMPASS",
-        desc: "تقارير تكتيكية تفصيلية ومطابقة لملف الخصوم بالفيديو. احصل على البصمة التكتيكية إطاراً بإطار لمنافسيك الدوليين.",
+        desc: "تقارير تكتيكية تفصيلية ومطابقة لملف الخصوم بالفيديو. استخلص البصمة التكتيكية الكاملة لمنافسيك الدوليين.",
         link_text: "اقرأ المزيد",
         metric_label: "متوسط وقت التنبؤ المستخرج",
         metric_value: "١٣٣ ملّي ثانية"
@@ -371,7 +382,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
         desc: "المنصة الاستراتيجية المتكاملة للتحضير. ترجم التقارير التكتيكية إلى تدريبات محاكاة ومخططات حركية مخصصة.",
         link_text: "اقرأ المزيد",
         metric_label: "مستوى التحقق الفني",
-        metric_value: "إطار بإطار بالفيديو"
+        metric_value: "تدقيق معتمد من الخبراء"
       },
       {
         id: "edge",
@@ -386,7 +397,7 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
 
     solutions_subtitle: "الحلول المتكاملة",
     solutions_title: "منهجية موحدة. لكل مستويات التنافس.",
-    solutions_desc: "نعالج بيانات المباريات المعتمدة إطاراً بإطار عبر مسار عمل هجين. يجمع مسار عملنا الاستقصائي المبتكر بين تقنيات تحليل الفيديو المتقدمة والتدقيق البشري عالي الدقة إطاراً بإطار بواسطة أبطال دوليين. لا تخمين تلقائي — نوفر توجيهات تكتيكية دقيقة وموثقة يتم دراستها في غرفة الإعداد وتطبيقها في الكورنر.",
+    solutions_desc: "يتم تدقيق كل إيجاز تكتيكي إطاراً بإطار بواسطة أبطال العالم لـ WKF قبل التسليم لضمان الدقة القتالية.",
     solutions_learn_more: "استكشف المنهجية والنظام",
 
     demo_subtitle: "عرض تجريبي",
@@ -426,21 +437,21 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
       {
         tell: "انخفاض طفيف في كتف القيادة",
         trigger: "كيزامي-زوكي (لكمة خاطفة قيادية)",
-        timing: "0.22 ثانية قبل الانطلاق",
+        timing: "أجزاء من الثانية",
         reliability: "مرتفع (88%)",
         rating: "high"
       },
       {
         tell: "رفع الكعب الخلفي وتثبيت دوران الحوض",
         trigger: "غياكو-زوكي (لكمة خلفية)",
-        timing: "0.31 ثانية قبل الانطلاق",
+        timing: "أجزاء من الثانية",
         reliability: "مرتفع (94%)",
         rating: "high"
       },
       {
         tell: "خطوة صغيرة للخارج بالقدم الأمامية",
         trigger: "مواشي-جيري (ركلة دائرية)",
-        timing: "0.45 ثانية قبل الركلة/الكنس",
+        timing: "أجزاء من الثانية",
         reliability: "متوسط (72%)",
         rating: "medium"
       }
@@ -452,10 +463,10 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
       { value: "٤ مباريات", label: "الحد الأدنى للمباريات المحللة قبل اعتماد أي استنتاج", tag: "مقارنات متعددة" }
     ],
 
-    testimonials_subtitle: "شهادات المدربين واللاعبين",
-    testimonials_title: "التحقق الميداني في الكورنر",
+    testimonials_subtitle: "تكامل الاتحادات الوطنية",
+    testimonials_title: "دورات الإعداد القومي ومتابعة المنتخبات",
     testimonials: [],
-    testimonials_fallback: "تتعاون كومباس حالياً مع اتحادات وطنية تستعد لدورة بطولات WKF لعام 2026. مراجع العملاء متاحة عند الطلب.",
+    testimonials_fallback: "تتعاون كومباس حالياً مع اتحادات وطنية تستعد لدورة بطولات WKF لعام 2026. تتبع متعدد للاعبين ومراجع العملاء متاحة عند الطلب الآمن.",
 
     insights_subtitle: "شبكة الاستخبارات",
     insights_title: "إيجازات تكتيكية ومقالات تحليلية",

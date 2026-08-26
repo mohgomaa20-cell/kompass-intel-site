@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const InsightsGrid: React.FC = () => {
@@ -20,12 +21,13 @@ export const InsightsGrid: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4-Card Grid (Content Preview Library, Non-Clickable) */}
+        {/* 4-Card Grid (Content Preview Library, Clickable to Dynamic Pages) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.insights.map((item, i) => (
-            <div 
+            <Link 
               key={i} 
-              className="flex flex-col justify-between bg-kompass-card border border-kompass-border border-t-2 border-t-kompass-teal p-6 transition-all"
+              href={`/insights/${i + 1}`}
+              className="flex flex-col justify-between bg-kompass-card border border-kompass-border border-t-2 border-t-kompass-teal p-6 transition-all group hover:border-kompass-teal/60 cursor-pointer"
             >
               <div>
                 {/* Tag Only (Date Removed) */}
@@ -33,17 +35,20 @@ export const InsightsGrid: React.FC = () => {
                   <span className="text-kompass-teal">{item.category}</span>
                 </div>
                 
-                {/* Title (Non-Clickable) */}
-                <h3 className="font-condensed text-base font-bold text-kompass-text tracking-wide leading-snug text-left uppercase">
+                {/* Title */}
+                <h3 className="font-condensed text-base font-bold text-kompass-text tracking-wide leading-snug text-left uppercase group-hover:text-kompass-teal transition-colors">
                   {item.title}
                 </h3>
               </div>
 
-              {/* Read Time Info (Arrow/Link Removed) */}
+              {/* Read Time Info & Click Indicator */}
               <div className="mt-8 flex justify-between items-center text-[10px] font-mono border-t border-kompass-border/30 pt-4 text-kompass-text/40">
                 <span>READING TIME: {item.read_time}</span>
+                <span className="text-kompass-teal font-sans text-sm font-extrabold transform group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 export const ProductShowcase: React.FC = () => {
   const { t } = useLanguage();
@@ -42,25 +43,16 @@ export const ProductShowcase: React.FC = () => {
               </div>
 
               {/* Product Telemetry Mockup Teaser */}
-              <div className="my-6 border border-kompass-border/60 bg-kompass-bg/40 p-4 font-mono text-[9px] text-kompass-text/75 h-[120px] flex flex-col justify-between shadow-inner">
+              <div className={`my-6 border border-kompass-border/60 bg-kompass-bg/40 font-mono text-[9px] text-kompass-text/75 h-[120px] flex flex-col justify-between shadow-inner overflow-hidden ${prod.id === "kompass" ? "p-0" : "p-4"}`}>
                 {prod.id === "kompass" && (
-                  <div className="space-y-2">
-                    <div className="flex justify-between border-b border-kompass-border/30 pb-1">
-                      <span>STANCE DISTRIBUTION</span>
-                      <span className="text-kompass-teal">HIDARI 82%</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-10 text-[8px]">REAR:</span>
-                      <div className="flex-grow h-1.5 bg-kompass-border/40">
-                        <div className="h-full bg-kompass-teal" style={{ width: "82%" }} />
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-10 text-[8px]">FRONT:</span>
-                      <div className="flex-grow h-1.5 bg-kompass-border/40">
-                        <div className="h-full bg-kompass-text/40" style={{ width: "18%" }} />
-                      </div>
-                    </div>
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src="/images/kia_report.png"
+                      alt="KOMPASS KIA Report Screenshot (Redacted)"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                    />
                   </div>
                 )}
 

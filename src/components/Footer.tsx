@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import Logo from "@/components/ui/Logo";
+import Image from "next/image";
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -23,9 +24,19 @@ export const Footer: React.FC = () => {
                 KOMPASS
               </span>
             </div>
-            <p className="text-[11px] text-kompass-text/50 max-w-xs leading-relaxed">
+            <p className="text-[11px] text-kompass-text/50 max-w-xs leading-relaxed whitespace-pre-line">
               {t.foot_desc}
             </p>
+            {/* Real Professional Team Photo */}
+            <div className="relative w-48 h-32 border border-kompass-border/30 rounded-lg overflow-hidden mt-3 shadow-md shadow-kompass-teal/5">
+              <Image 
+                src="/images/malek_team.jpg"
+                alt="KOMPASS Founder Malek Salama and Technical Analysis Team"
+                fill
+                sizes="192px"
+                className="object-cover object-top filter brightness-90 contrast-105"
+              />
+            </div>
           </div>
 
           {/* Col 1: Ecosystem */}

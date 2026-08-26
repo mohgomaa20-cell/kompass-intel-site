@@ -7,10 +7,10 @@ export const ProcessStrip: React.FC = () => {
   const { t } = useLanguage();
 
   const steps = [
-    { num: "01", label: t.p_step1, desc: "Extract high-frequency combative signals and raw telemetry logs." },
-    { num: "02", label: t.p_step2, desc: "Process combat profiles through champion-audited tactical scenario matrices." },
-    { num: "03", label: t.p_step3, desc: "Synthesize target tells into distilled, sub-second execution blueprints." },
-    { num: "04", label: t.p_step4, desc: "Secure the first-move advantage on the mat and execute key point counters." }
+    { num: "01", label: t.p_step1, desc: t.p_desc1 },
+    { num: "02", label: t.p_step2, desc: t.p_desc2 },
+    { num: "03", label: t.p_step3, desc: t.p_desc3 },
+    { num: "04", label: t.p_step4, desc: t.p_desc4 }
   ];
 
   return (

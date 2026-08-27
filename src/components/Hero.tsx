@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center items-center w-full">
             <div className="w-full max-w-[550px] border border-cyan-500/20 shadow-2xl rounded-xl bg-kompass-card/30 overflow-hidden">
               <Image 
-                src="https://ckrdgxlakkyrzajkmmwy.supabase.co/storage/v1/object/public/Kompass/Kompass%20website.jpeg"
+                src={t.img_hero}
                 alt="WKF Tactical Telemetry Analysis"
                 width={700}
                 height={450}

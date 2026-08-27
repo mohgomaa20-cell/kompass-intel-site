@@ -47,7 +47,7 @@ export const ProductShowcase: React.FC = () => {
                 {prod.id === "kompass" && (
                   <div className="relative w-full h-full">
                     <Image 
-                      src="/images/kia_report.png"
+                      src={t.img_kia}
                       alt="KOMPASS KIA Report Screenshot (Redacted)"
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"

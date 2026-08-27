@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/ui/Logo";
+import { signIn, checkSession } from "@/lib/auth";
 
 export default function AdminLoginPage() {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
@@ -12,40 +14,44 @@ export default function AdminLoginPage() {
 
   useEffect(() => {
     // If already logged in, redirect to dashboard
-    const session = sessionStorage.getItem("kompass_admin_session");
-    if (session === "active") {
-      router.push("/admin");
-    }
+    const verifySession = async () => {
+      const active = await checkSession();
+      if (active) {
+        router.push("/admin");
+      }
+    };
+    verifySession();
   }, [router]);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setErrorMsg("");
 
-    setTimeout(() => {
-      setLoading(false);
-      // Hardcoded secure master key fallback
-      const masterKey = process.env.NEXT_PUBLIC_ADMIN_MASTER_KEY || "sente2026!";
-      
-      if (password === masterKey) {
-        sessionStorage.setItem("kompass_admin_session", "active");
+    try {
+      const res = await signIn(email, password);
+      if (res.success) {
         router.push("/admin");
       } else {
-        setErrorMsg("ACCESS DENIED: INVALID DECRYPTION AUTH KEY");
+        setErrorMsg(res.error || "ACCESS DENIED: INVALID PORTAL KEY");
       }
-    }, 600);
+    } catch (err) {
+      console.error(err);
+      setErrorMsg("AUTHENTICATION PORTAL EXCEPTION DETECTED");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-[#0B0F16] text-[#E6E6E6] flex flex-col justify-center items-center p-4 selection:bg-[#00D6C6] selection:text-[#0B0F16]">
-      <div className="w-full max-w-[400px] bg-[#111722] border border-kompass-border p-8 relative shadow-2xl shadow-kompass-teal/5">
+      <div className="w-full max-w-[400px] bg-[#111722] border border-[#1e293b]/60 p-8 relative shadow-2xl shadow-kompass-teal/5">
         
         {/* Corner Brackets */}
-        <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-kompass-border" />
-        <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-kompass-border" />
-        <div className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-kompass-border" />
-        <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-kompass-border" />
+        <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-kompass-border/30" />
+        <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-kompass-border/30" />
+        <div className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-kompass-border/30" />
+        <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-kompass-border/30" />
 
         {/* Brand Header */}
         <div className="flex flex-col items-center text-center space-y-4 mb-8">
@@ -63,8 +69,23 @@ export default function AdminLoginPage() {
         {/* Login Form */}
         <form onSubmit={handleLogin} className="space-y-4 text-left">
           <div className="flex flex-col gap-1.5">
+            <label htmlFor="auth-email" className="font-condensed text-xs uppercase tracking-wider text-kompass-text/75 font-semibold">
+              SECURE EMAIL
+            </label>
+            <input 
+              type="email" 
+              id="auth-email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="analyst@kompass-analysis.com"
+              className="border border-kompass-border/60 bg-[#0B0F16] px-3 py-2 text-sm text-[#E6E6E6] placeholder-kompass-text/20 focus:border-[#00D6C6] focus:outline-none rounded-none w-full font-mono"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
             <label htmlFor="auth-key" className="font-condensed text-xs uppercase tracking-wider text-kompass-text/75 font-semibold">
-              ADMIN MASTER AUTH KEY
+              PORTAL PASSWORD
             </label>
             <input 
               type="password" 
@@ -73,7 +94,7 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••••••••"
-              className="border border-kompass-border bg-[#0B0F16] px-3 py-2 text-sm text-[#E6E6E6] placeholder-kompass-text/30 focus:border-[#00D6C6] focus:outline-none rounded-none w-full"
+              className="border border-kompass-border/60 bg-[#0B0F16] px-3 py-2 text-sm text-[#E6E6E6] placeholder-kompass-text/20 focus:border-[#00D6C6] focus:outline-none rounded-none w-full"
             />
           </div>
 
@@ -92,7 +113,7 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        {/* Footer text */}
+        {/* Warning text */}
         <div className="mt-8 text-center text-[8px] font-mono text-kompass-text/30 uppercase leading-relaxed">
           WARNING: SYSTEM DETECTS UNAUTHORIZED CONNECTIONS. ALL IP ADDRESSES LOGGED.
         </div>

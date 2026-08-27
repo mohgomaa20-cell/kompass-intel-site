@@ -33,7 +33,7 @@ export const Testimonial: React.FC = () => {
             <div className="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-kompass-teal/30 z-10" />
             
             <Image 
-              src="/images/corner_coaching.jpg" 
+              src={t.img_corner} 
               alt="WKF In-Corner Technical Coaching Verification" 
               fill
               priority

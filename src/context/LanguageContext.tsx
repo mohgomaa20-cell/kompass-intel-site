@@ -49,6 +49,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (overrides.hero_title) newT.hero_title = overrides.hero_title;
     if (overrides.hero_desc) newT.hero_desc = overrides.hero_desc;
     
+    // Image overrides
+    if (overrides.img_hero) newT.img_hero = overrides.img_hero;
+    if (overrides.img_corner) newT.img_corner = overrides.img_corner;
+    if (overrides.img_kia) newT.img_kia = overrides.img_kia;
+    if (overrides.img_team) newT.img_team = overrides.img_team;
+    
     // Ecosystem overrides
     newT.products = baseT.products.map(prod => {
       const updated = { ...prod };

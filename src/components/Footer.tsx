@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
             {/* Real Professional Team Photo */}
             <div className="relative w-48 h-32 border border-kompass-border/30 rounded-lg overflow-hidden mt-3 shadow-md shadow-kompass-teal/5">
               <Image 
-                src="/images/malek_team.jpg"
+                src={t.img_team}
                 alt="KOMPASS Founder Malek Salama and Technical Analysis Team"
                 fill
                 sizes="192px"

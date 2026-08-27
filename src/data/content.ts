@@ -154,6 +154,10 @@ export interface ContentTranslation {
   foot_col_solutions: string;
   foot_col_company: string;
   foot_col_legal: string;
+  img_hero: string;
+  img_corner: string;
+  img_kia: string;
+  img_team: string;
 }
 
 export const content: Record<"en" | "ar", ContentTranslation> = {
@@ -332,7 +336,11 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     foot_col_reports: "ECOSYSTEM",
     foot_col_solutions: "SOLUTIONS",
     foot_col_company: "COMPANY",
-    foot_col_legal: "LEGAL"
+    foot_col_legal: "LEGAL",
+    img_hero: "https://ckrdgxlakkyrzajkmmwy.supabase.co/storage/v1/object/public/Kompass/Kompass%20website.jpeg",
+    img_corner: "/images/corner_coaching.jpg",
+    img_kia: "/images/kia_report.png",
+    img_team: "/images/malek_team.jpg"
   },
   ar: {
     nav_idea: "الفكرة",
@@ -509,7 +517,11 @@ export const content: Record<"en" | "ar", ContentTranslation> = {
     foot_col_reports: "المنظومة المتكاملة",
     foot_col_solutions: "الحلول",
     foot_col_company: "الشركة",
-    foot_col_legal: "الشؤون القانونية"
+    foot_col_legal: "الشؤون القانونية",
+    img_hero: "https://ckrdgxlakkyrzajkmmwy.supabase.co/storage/v1/object/public/Kompass/Kompass%20website.jpeg",
+    img_corner: "/images/corner_coaching.jpg",
+    img_kia: "/images/kia_report.png",
+    img_team: "/images/malek_team.jpg"
   }
 };
 
